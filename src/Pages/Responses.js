@@ -1,67 +1,3 @@
-// import { useEffect, useState } from 'react';
-
-// import axios from 'axios';
-
-// import { useParams } from 'react-router-dom';
-
-// function Responses() {
-
-//     const { id } = useParams();
-
-//     const [responses, setResponses] = useState([]);
-
-//     useEffect(() => {
-//         fetchResponses();
-//     }, []);
-
-//     const fetchResponses = async () => {
-
-//         const res = await axios.get(
-//             `http://localhost:5000/responses/${id}`
-//         );
-
-//         setResponses(res.data);
-//     };
-
-//     return (
-
-//         <div className="container mt-4">
-
-//             <h2>Responses</h2>
-
-//             {
-//                 responses.map((r) => (
-
-//                     <div
-//                         className="card p-3 mb-3"
-//                         key={r.Id}
-//                     >
-
-//                         <pre>
-//                             {
-//                                 JSON.stringify(
-//                                     JSON.parse(r.ResponseData),
-//                                     null,
-//                                     2
-//                                 )
-//                             }
-//                         </pre>
-
-//                     </div>
-//                 ))
-//             }
-
-//         </div>
-//     );
-// }
-
-// export default Responses;
-
-
-
-
-
-
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams, Link } from 'react-router-dom';
@@ -299,7 +235,7 @@ function Responses() {
   useEffect(() => { fetchResponses(); }, []);
 
   const fetchResponses = async () => {
-    const res = await axios.get(`http://localhost:5000/responses/${id}`);
+    const res = await axios.get(`http://assignment-form.onrender.com/responses/${id}`);
     setResponses(res.data);
   };
 
