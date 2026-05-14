@@ -1,127 +1,3 @@
-// import { useEffect, useState } from 'react';
-
-// import axios from 'axios';
-
-// import { Link } from 'react-router-dom';
-
-// function Dashboard() {
-
-//     const [forms, setForms] = useState([]);
-
-//     useEffect(() => {
-//         fetchForms();
-//     }, []);
-
-//     const fetchForms = async () => {
-
-//         const res = await axios.get(
-//             'http://localhost:5000/forms'
-//         );
-
-//         setForms(res.data);
-//     };
-
-//     const deleteForm = async (id) => {
-
-//         await axios.delete(
-//             `http://localhost:5000/delete-form/${id}`
-//         );
-
-//         fetchForms();
-//     };
-
-//     return (
-
-//         <div className="container mt-4">
-
-//             <div className="d-flex justify-content-between align-items-center mb-4">
-
-//                 <h1 className="fw-bold">
-//                     Dynamic Form Builder
-//                 </h1>
-
-//                 <Link
-//                     to="/create"
-//                     className="btn btn-primary btn-lg"
-//                 >
-//                     Create Form
-//                 </Link>
-
-//             </div>
-
-//             <div className="row">
-
-//                 {
-//                     forms.map((form) => (
-
-//                         <div
-//                             className="col-md-4 mb-4"
-//                             key={form.Id}
-//                         >
-
-//                             <div className="card shadow border-0 h-100">
-
-//                                 <div
-//                                     className="card-header text-white"
-//                                     style={{
-//                                         backgroundColor: form.ThemeColor
-//                                     }}
-//                                 >
-
-//                                     <h5>
-//                                         {form.Title}
-//                                     </h5>
-
-//                                 </div>
-
-//                                 <div className="card-body">
-
-//                                     <p>
-//                                         Created dynamic form
-//                                     </p>
-
-//                                     <Link
-//                                         to={`/form/${form.Id}`}
-//                                         className="btn btn-success me-2"
-//                                     >
-//                                         Open
-//                                     </Link>
-
-//                                     <Link
-//                                         to={`/responses/${form.Id}`}
-//                                         className="btn btn-warning me-2"
-//                                     >
-//                                         Responses
-//                                     </Link>
-
-//                                     <button
-//                                         className="btn btn-danger"
-//                                         onClick={() =>
-//                                             deleteForm(form.Id)
-//                                         }
-//                                     >
-//                                         Delete
-//                                     </button>
-
-//                                 </div>
-
-//                             </div>
-
-//                         </div>
-//                     ))
-//                 }
-
-//             </div>
-
-//         </div>
-//     );
-// }
-
-// export default Dashboard;
-
-
-
-
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -307,12 +183,12 @@ function Dashboard() {
   useEffect(() => { fetchForms(); }, []);
 
   const fetchForms = async () => {
-    const res = await axios.get('http://localhost:5000/forms');
+    const res = await axios.get('http://assignment-form.onrender.com/forms');
     setForms(res.data);
   };
 
   const deleteForm = async (id) => {
-    await axios.delete(`http://localhost:5000/delete-form/${id}`);
+    await axios.delete(`http://assignment-form.onrender.com/delete-form/${id}`);
     fetchForms();
   };
 
